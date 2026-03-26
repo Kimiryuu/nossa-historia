@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Uma proposta 💖</title>
+
+<style>
+body {
+  margin:0;
+  background: radial-gradient(circle at top, #0a0a1a, black);
+  color:white;
+  font-family: Arial;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+/* estrelas */
+body::before {
+  content:"";
+  position:fixed;
+  top: 0; left: 0;
+  width:100%;
+  height:100%;
+  background:url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity:0.5;
+  z-index:-2;
+}
+
+/* lua */
+body::after {
+  content:"";
+  position:fixed;
+  top:40px;
+  right:40px;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:radial-gradient(circle,#fff,#ccc,transparent);
+  box-shadow:0 0 40px white;
+  z-index:-1;
+}
+
+/* páginas */
+.pagina {
+  display:none;
+  min-height:100vh;
+  padding:40px;
+  box-sizing: border-box;
+}
+
+.ativa {
+  display:block;
+}
+
+/* texto */
+p {
+  max-width:900px;
+  margin:20px auto;
+  line-height:1.9;
+  font-size:20px;
+  white-space:pre-line;
+}
+
+/* imagem */
+img {
+  width:300px;
+  max-width:80%;
+  border-radius:12px;
+  margin-top:20px;
+}
+
+/* botão */
+button {
+  padding:15px 30px;
+  font-size:18px;
+  border:none;
+  background:#ff4d6d;
+  color:white;
+  border-radius:10px;
+  cursor:pointer;
+  margin:15px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: #ff758f;
+}
+
+/* final */
+#finalBox {
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:black;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  padding:30px;
+  z-index: 100;
+  overflow-y: auto; /* Permite rolar o texto longo */
+}
+
+.flash {
+  position:fixed;
+  top: 0; left: 0;
+  width:100%;
+  height:100%;
+  background:white;
+  opacity:0;
+  pointer-events:none;
+  z-index: 200;
+  transition: opacity 0.4s;
+}
+
+.destino {
+  font-size:3em;
+  color:pink;
+  text-shadow:0 0 20px pink;
+}
+</style>
+</head>
+
+<body>
+
+<div class="flash" id="flash"></div>
+
+<div id="p0" class="pagina ativa">
+<h1>Você aceita uma proposta? 🌙</h1>
+<button id="start">Aceitar</button>
+</div>
+
+<audio id="musica" src="musica.mp3" loop></audio>
+
+<div id="p1" class="pagina">
+<h1>2017 — O início</h1>
+<p>
+Amanda, meu amor... tomei a liberdade de criar algo pra você, algo que você nunca esqueça, algo que fique guardado pra sempre. 
+
+Eu lembro perfeitamente de 2017, como se tivesse acontecido ontem. Foram horas te esperando naquele shopping, horas que pareciam não passar nunca, e quanto mais o tempo passava, mais nervoso eu ficava, mais ansioso eu ficava, mais eu pensava em como seria aquele momento. 
+
+Mas tudo mudou no segundo em que eu te vi. Foi como se o mundo tivesse parado completamente, como se o som tivesse sumido, como se só existisse você ali na minha frente. Minha mente travou, meu coração disparou, e eu simplesmente segui o que eu sentia. Eu fui até você, te abracei, e naquele abraço eu senti algo que eu nunca tinha sentido antes. Não era só carinho, não era só emoção, era algo muito maior, algo que eu não sabia explicar, mas que eu sabia que era real. E ali, naquele momento, mesmo sem entender direito o que estava acontecendo, eu tive uma certeza dentro de mim... era você.
+</p>
+<img src="foto1.jpg">
+</div>
+
+<div id="p2" class="pagina">
+<h1>2018 — A pausa</h1>
+<p>
+2018 foi um ano estranho, porque ao mesmo tempo que a vida seguiu, parecia que uma parte de mim tinha ficado presa lá atrás. O tempo passou, muitas coisas aconteceram, nós mudamos, crescemos, seguimos caminhos diferentes, mas mesmo assim, nunca foi como se a gente tivesse realmente se separado. 
+
+Sempre existiu algo ali, sempre teve uma conexão que não sumia, não importava o quanto o tempo passasse ou o que acontecesse ao nosso redor. Foram tantas conversas, tantas risadas, tantos momentos simples, mas que pra mim sempre tiveram um significado enorme. Saídas, ligações, jogos, momentos inesperados... e até aqueles momentos que eram só nossos. 
+
+E no fundo, mesmo quando eu não falava nada, eu sempre senti que aquilo não tinha acabado. Sempre senti que a nossa história não tinha chegado ao fim. Porque quando é real, não desaparece... só espera o momento certo pra continuar.
+</p>
+<img src="foto2.jpg">
+</div>
+
+<div id="p3" class="pagina">
+<h1>2026 — A volta</h1>
+<p>
+E agora... 2026. Depois de tudo, depois de tanto tempo, depois de tantas voltas que a vida deu, a gente chegou aqui. E eu posso dizer com toda certeza que eu nunca vivi algo assim antes. Porque estar com você de novo não é só bom... é diferente. 
+
+É como se tudo finalmente fizesse sentido. Antes de você, minha vida até seguia, mas era como uma noite sem luz, meio vazia, meio sem direção. E quando você voltou, foi como se tudo tivesse sido iluminado de novo. 
+
+E eu percebi uma coisa que talvez eu sempre soube, mas nunca consegui dizer de verdade: não importa o tempo que passe, não importa o que aconteça, você sempre foi, e sempre vai ser, a minha escolha. Eu te amo, minha neném. E agora... chegou o momento mais importante da minha vida.
+</p>
+</div>
+
+<div id="p4" class="pagina">
+    <h1>E então agora que o leão se apaixonou pelo cordeiro... você aceita continuar escrevendo esse capítulo comigo? </h1>
+    <p style="font-style: italic; font-size: 24px;">"Você aceita passar 'a thousand years' do meu lado?"</p>
+    <div style="display: flex; gap: 20px; justify-content: center;">
+        <button id="sim">SIM 💖</button>
+        <button id="nao">não 😳</button>
+    </div>
+</div>
+
+<div id="finalBox">
+    <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+        <p id="finalText" style="text-align: left;"></p>
+        <img src="foto3.jpg" style="margin-bottom: 20px;">
+        <button id="aceito">SIM, EU ACEITO 💖</button>
+    </div>
+</div>
+
+<script>
+/* navegação */
+function ir(id){
+ document.querySelectorAll(".pagina").forEach(p=>p.classList.remove("ativa"));
+ document.getElementById(id).classList.add("ativa");
+ // Garante que a nova página comece no topo
+ window.scrollTo(0,0);
+}
+
+/* início */
+document.getElementById("start").onclick = function(){
+  // Tenta tocar a música. Se o navegador bloquear, não faz nada.
+  document.getElementById("musica").play().catch(()=>{});
+  ir("p1");
+};
+
+/* avanço clicando nas páginas de história */
+document.getElementById("p1").onclick=()=>ir("p2");
+document.getElementById("p2").onclick=()=>ir("p3");
+document.getElementById("p3").onclick=()=>ir("p4");
+
+/* SIM */
+document.getElementById("sim").onclick = function(){
+ document.getElementById("finalBox").style.display="block";
+ document.getElementById("finalText").innerText = `Amanda... se você chegou até aqui, então você já percorreu comigo cada pedaço dessa história, cada lembrança, cada momento que fez a gente ser quem é hoje. E mesmo assim, ainda parece que tudo isso é só o começo. Porque quando eu paro pra pensar em você, eu não penso só no passado, eu não penso só no que a gente viveu... eu penso em tudo que ainda pode existir.
+
+Eu penso nos dias simples, naqueles que não têm nada de especial, mas que se tornam únicos só porque você está ali comigo. Eu penso nas risadas bobas, nas conversas longas, nos silêncios confortáveis onde não precisa dizer nada, porque só a sua presença já basta.
+
+Eu penso nos dias difíceis também. Porque amar você não é só querer estar nos momentos bons... é querer estar principalmente quando tudo parecer dar errado. É querer segurar sua mão quando você precisar, é querer ser seu abrigo, seu apoio, sua calma no meio do caos.
+
+E quanto mais eu penso nisso tudo... mais eu percebo uma coisa que já deveria estar óbvia pra mim há muito tempo.
+
+Não existe um caminho onde você não esteja.
+
+Não existe futuro que faça sentido sem você nele.
+
+Não existe versão da minha vida que eu queira viver... se não for ao seu lado.
+
+Porque você não é só alguém que passou pela minha história.
+
+Você é a minha história.
+
+Você é o motivo de tantas lembranças bonitas.
+
+Você é o motivo de tantos sentimentos que eu nem sei explicar direito.
+
+E depois de tudo... depois de todos esses anos, de todas as idas e vindas, de todos os momentos que poderiam ter nos afastado de vez... a gente ainda está aqui.
+
+E isso não é por acaso.
+
+Nunca foi.
+
+Sempre teve algo maior.
+
+Sempre teve algo que puxava a gente de volta.
+
+E agora eu entendo o porquê.
+
+Porque era pra ser você.
+
+Sempre foi você.
+
+E sempre vai ser você.
+
+E hoje eu não quero mais deixar isso nas mãos do tempo, do destiny, ou de qualquer outra coisa.
+
+Hoje eu quero escolher.
+
+E eu escolho você.
+
+Eu escolho você nos dias bons.
+
+Eu escolho você nos dias difíceis.
+
+Eu escolho você quando tudo estiver perfeito.
+
+E escolho você principalmente quando nada estiver.
+
+Eu escolho você todos os dias.
+
+Sem dúvida.
+
+Sem medo.
+
+Sem hesitar.
+
+Porque amar você é a coisa mais certa que eu já senti na minha vida.
+
+Então agora... isso não é só um momento bonito.
+
+Não é só uma lembrança que vai ficar guardada.
+
+É um ponto de virada.
+
+É onde tudo realmente começa.
+
+Amanda...
+
+aceita passar o resto da sua vida ao meu lado?
+
+Eu prometo que vou tentar todos os dias ser alguém melhor pra você.
+
+Prometo cuidar de você, te respeitar, te apoiar e te amar com tudo que eu tenho.
+
+Prometo não desistir, mesmo quando for difícil.
+
+Prometo continuar aqui.
+
+Sempre.
+
+Por você.
+
+Pela gente.
+
+Por tudo que ainda vamos viver.
+
+Porque no final de tudo...
+
+sempre foi você.`;
+ 
+ // Rola para o topo do texto longo
+ document.getElementById("finalBox").scrollTop = 0;
+};
+
+/* FINAL - AGORA MANTENDO OS EFEITOS */
+document.getElementById("aceito").onclick = function(){
+ let flash=document.getElementById("flash");
+ flash.style.opacity="1";
+
+ setTimeout(()=>{
+    flash.style.opacity="0";
+    
+    // Em vez de limpar o body, limpamos e reescrevemos o finalBox
+    let finalBox = document.getElementById("finalBox");
+    finalBox.innerHTML = ""; // Limpa o conteúdo antigo (texto longo e botão)
+    
+    // Centraliza o novo conteúdo verticalmente
+    finalBox.style.display = "flex";
+    
+    // Cria os elementos da tela final
+    let tituloFinal = document.createElement("h1");
+    tituloFinal.innerText = "Nós 💖";
+    
+    let paragrafoFinal = document.createElement("p");
+    paragrafoFinal.innerText = "Para sempre.";
+    paragrafoFinal.style.fontSize = "30px"; // Texto maior para destaque
+    
+    // Adiciona a foto novamente como um toque final
+    let fotoFinal = document.createElement("img");
+    fotoFinal.src = "foto3.jpg";
+    fotoFinal.style.marginTop = "30px";
+    
+    // Coloca os elementos na tela
+    finalBox.appendChild(tituloFinal);
+    finalBox.appendChild(paragrafoFinal);
+    finalBox.appendChild(fotoFinal);
+    
+ },400);
+};
+
+/* NÃO foge */
+document.getElementById("nao").onmouseover=function(){
+ this.style.position="absolute";
+ this.style.left=Math.random()*80+"%";
+ this.style.top=Math.random()*80+"%";
+};
+</script>
+
+</body>
+</html>
