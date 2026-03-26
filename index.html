@@ -63,10 +63,12 @@ p {
 
 /* imagem */
 img {
-  width:300px;
-  max-width:80%;
-  border-radius:12px;
-  margin-top:20px;
+  width: 500px; /* Aumentado de 300px para 500px para telas maiores */
+  max-width: 90%; /* Ocupa 90% da largura da tela no celular, garantindo que fique grande mas não corte */
+  height: auto; /* Mantém a proporção da foto (não deixa esticada) */
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2); /* Adicionei um brilho suave branco atrás da foto para destacar no fundo preto */
 }
 
 /* botão */
