@@ -2,218 +2,326 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Uma proposta 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Thousand Years for Amanda 💖</title>
 
 <style>
+/* --- CONFIGURAÇÕES GERAIS E FONTES --- */
+:root {
+  --primary-color: #f0f0f0; /* Branco Gelo (Cullen) */
+  --secondary-color: #c0c0c0; /* Cinza Prata Frio */
+  --text-glow: 0 0 15px rgba(255, 255, 255, 0.4);
+  --bg-overlay: rgba(0, 0, 0, 0.75); /* Mais escuro para o drama */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;700&family=Lora:wght@400;500&display=swap');
+
 body {
-  margin:0;
-  background: radial-gradient(circle at top, #0a0a1a, black);
-  color:white;
-  font-family: Arial;
-  text-align:center;
-  overflow-x:hidden;
+  margin: 0;
+  padding: 0;
+  color: var(--primary-color);
+  font-family: 'Lora', serif; /* Fonte elegante para leitura */
+  text-align: center;
+  overflow-x: hidden;
+  background-color: black;
+  scroll-behavior: smooth;
 }
 
-/* estrelas */
+/* --- CENÁRIO IMERSIVO (Fundo e Partículas) --- */
+/* A Floresta de Forks (Visual Mais Frio) */
 body::before {
-  content:"";
-  position:fixed;
+  content: "";
+  position: fixed;
   top: 0; left: 0;
-  width:100%;
-  height:100%;
-  background:url("https://www.transparenttextures.com/patterns/stardust.png");
-  opacity:0.5;
-  z-index:-2;
+  width: 100%;
+  height: 100%;
+  background-image: url("background-forks.jpg"); /* ADICIONE ESTA IMAGEM NA PASTA SE QUISER */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -3;
+  filter: grayscale(60%) brightness(50%) contrast(110%); /* Mais frio e dramático */
 }
 
-/* lua */
+/* Camada de Escurecimento para Leitura e Drama */
 body::after {
-  content:"";
-  position:fixed;
-  top:40px;
-  right:40px;
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  background:radial-gradient(circle,#fff,#ccc,transparent);
-  box-shadow:0 0 40px white;
-  z-index:-1;
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.9) 100%), var(--bg-overlay);
+  z-index: -2;
 }
 
-/* páginas */
-.pagina {
-  display:none;
-  min-height:100vh;
-  padding:40px;
-  box-sizing: border-box;
+/* Efeito de Diamante/Estrelas (Sutilizado) */
+.diamonds {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.15; /* Menos brilho, mais mistério */
+  z-index: -1;
+  pointer-events: none;
 }
 
-.ativa {
-  display:block;
+/* --- TÍTULOS E TEXTOS --- */
+h1 {
+  font-family: 'Cormorant Garamond', serif; /* Fonte de convite antigo */
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary-color);
+  text-shadow: var(--text-glow);
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* texto */
 p {
-  max-width:900px;
-  margin:20px auto;
-  line-height:1.9;
-  font-size:20px;
-  white-space:pre-line;
+  max-width: 800px;
+  margin: 30px auto;
+  line-height: 2;
+  font-size: 1.2em;
+  white-space: pre-line;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-/* imagem */
-img {
-  width: 500px; /* Aumentado de 300px para 500px para telas maiores */
-  max-width: 90%; /* Ocupa 90% da largura da tela no celular, garantindo que fique grande mas não corte */
-  height: auto; /* Mantém a proporção da foto (não deixa esticada) */
-  border-radius: 12px;
-  margin-top: 20px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.2); /* Adicionei um brilho suave branco atrás da foto para destacar no fundo preto */
+/* --- IMAGENS (Visual Dramático/Cinema Cullen) --- */
+.foto-dramatica {
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
 }
 
-/* botão */
+.foto-dramatica img {
+  width: 550px;
+  max-width: 85%;
+  height: auto;
+  border-radius: 4px; /* Mais quadrado para drama */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  transition: all 0.6s ease-in-out;
+  
+  /* O Efeito Drama Cullen (Frio, Desaturado, Alto Contraste) */
+  filter: grayscale(40%) brightness(80%) contrast(120%) saturate(70%) sepia(10%); /* Visual frio e cinematográfico */
+}
+
+/* Efeito Vignette Dramático sobre a foto */
+.foto-dramatica::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 4px;
+  background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.8) 100%);
+  pointer-events: none;
+  opacity: 0.8; /* Intensidade do vignette */
+}
+
+/* Efeito ao passar o mouse (Mais foco) */
+.foto-dramatica:hover img {
+  transform: scale(1.02);
+  filter: grayscale(10%) brightness(90%) contrast(110%) saturate(90%) sepia(5%); /* Foca um pouco a cor */
+}
+
+/* --- BOTÕES --- */
 button {
-  padding:15px 30px;
-  font-size:18px;
-  border:none;
-  background:#ff4d6d;
-  color:white;
-  border-radius:10px;
+  padding: 18px 45px;
+  font-size: 1.1em;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.6);
+  color: var(--primary-color);
+  border-radius: 3px;
   cursor:pointer;
-  margin:15px;
-  transition: 0.3s;
+  margin: 25px;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 button:hover {
-  transform: scale(1.1);
-  background: #ff758f;
+  background: #333; /* Fundo mais escuro no hover */
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
-/* final */
+/* --- PÁGINAS E TRANSIÇÕES --- */
+.pagina {
+  display: none;
+  min-height: 100vh;
+  padding: 80px 30px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 1.2s ease; /* Fade in mais lento */
+}
+
+.pagina.ativa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+/* --- FINAL BOX (Corrigido com Rolagem) --- */
 #finalBox {
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:black;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  padding:30px;
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.98) 0%, black 100%);
   z-index: 100;
-  overflow-y: auto; /* Permite rolar o texto longo */
+  overflow-y: auto;
+  padding: 80px 30px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 2s ease;
 }
 
 .flash {
-  position:fixed;
+  position: fixed;
   top: 0; left: 0;
-  width:100%;
-  height:100%;
-  background:white;
-  opacity:0;
-  pointer-events:none;
+  width: 100%; height: 100%;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
   z-index: 200;
-  transition: opacity 0.4s;
+  transition: opacity 0.6s ease;
 }
 
-.destino {
-  font-size:3em;
-  color:pink;
-  text-shadow:0 0 20px pink;
+/* Ajustes para a tela final ("Pra sempre") */
+.forever-screen {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5em;
+  color: var(--primary-color);
+  text-shadow: 0 0 30px var(--primary-color);
+  letter-spacing: 5px;
 }
 </style>
 </head>
 
 <body>
 
+<div class="diamonds"></div>
 <div class="flash" id="flash"></div>
 
+<audio id="musica" src="thousand-years.mp3" loop></audio>
+
 <div id="p0" class="pagina ativa">
-<h1>Você aceita uma proposta? 🌙</h1>
-<button id="start">Aceitar</button>
+  <h1>A Thousand Years para Amanda</h1>
+  <p>Você aceita percorrer essa história comigo?</p>
+  <button id="start">Sim, para sempre 💖</button>
 </div>
 
-<audio id="musica" src="musica.mp3" loop></audio>
-
 <div id="p1" class="pagina">
-<h1>2017 — O início</h1>
-<p>
-Amanda, meu amor... tomei a liberdade de criar algo pra você, algo que você nunca esqueça, algo que fique guardado pra sempre. 
+  <h1>2017 — O início</h1>
+  <p>Amanda, meu amor... tomei a liberdade de criar algo pra você, algo que você nunca esqueça, algo que fique guardado pra sempre. 
 
 Eu lembro perfeitamente de 2017, como se tivesse acontecido ontem. Foram horas te esperando naquele shopping, horas que pareciam não passar nunca, e quanto mais o tempo passava, mais nervoso eu ficava, mais ansioso eu ficava, mais eu pensava em como seria aquele momento. 
 
-Mas tudo mudou no segundo em que eu te vi. Foi como se o mundo tivesse parado completamente, como se o som tivesse sumido, como se só existisse você ali na minha frente. Minha mente travou, meu coração disparou, e eu simplesmente segui o que eu sentia. Eu fui até você, te abracei, e naquele abraço eu senti algo que eu nunca tinha sentido antes. Não era só carinho, não era só emoção, era algo muito maior, algo que eu não sabia explicar, mas que eu sabia que era real. E ali, naquele momento, mesmo sem entender direito o que estava acontecendo, eu tive uma certeza dentro de mim... era você.
-</p>
-<img src="foto1.jpg" style="margin-bottom: 50px; width: 500px; max-width: 90%; height: auto; border-radius: 12px;">
+Mas tudo mudou no segundo em que eu te vi. Foi como se o mundo tivesse parado completamente, como se o som tivesse sumido, como se só existisse você ali na minha frente. Minha mente travou, meu coração disparou, e eu simplesmente segui o que eu sentia. Eu fui até você, te abracei, e naquele abraço eu senti algo que eu nunca tinha sentido antes. Não era só carinho, não era só emoção, era algo muito maior, algo que eu não sabia explicar, mas que eu sabia que era real. E ali, naquele momento, mesmo sem entender direito o que estava acontecendo, eu tive uma certeza dentro de mim... era você.  
+  <div class="foto-dramatica">
+    <img src="foto1.jpg">
+  </div>
+  
 </div>
 
 <div id="p2" class="pagina">
-<h1>2018 — A pausa</h1>
-<p>
-2018 foi um ano estranho, porque ao mesmo tempo que a vida seguiu, parecia que uma parte de mim tinha ficado presa lá atrás. O tempo passou, muitas coisas aconteceram, nós mudamos, crescemos, seguimos caminhos diferentes, mas mesmo assim, nunca foi como se a gente tivesse realmente se separado. 
-
+  <h1>2018 — A pausa</h1>
+  <p>2018 foi um ano estranho, porque ao mesmo tempo que a vida seguiu, parecia que uma parte de mim tinha ficado presa lá atrás. O tempo passou, muitas coisas aconteceram, nós mudamos, crescemos, seguimos caminhos diferentes, mas mesmo assim, nunca foi como se a gente tivesse realmente se separado. 
 Sempre existiu algo ali, sempre teve uma conexão que não sumia, não importava o quanto o tempo passasse ou o que acontecesse ao nosso redor. Foram tantas conversas, tantas risadas, tantos momentos simples, mas que pra mim sempre tiveram um significado enorme. Saídas, ligações, jogos, momentos inesperados... e até aqueles momentos que eram só nossos. 
-
-E no fundo, mesmo quando eu não falava nada, eu sempre senti que aquilo não tinha acabado. Sempre senti que a nossa história não tinha chegado ao fim. Porque quando é real, não desaparece... só espera o momento certo pra continuar.
-</p>
-<img src="foto2.jpg" style="margin-bottom: 50px; width: 500px; max-width: 90%; height: auto; border-radius: 12px;">
+E no fundo, mesmo quando eu não falava nada, eu sempre senti que aquilo não tinha acabado. Sempre senti que a nossa história não tinha chegado ao fim. Porque quando é real, não desaparece... só espera o momento certo pra continuar..</p>
+  
+  <div class="foto-dramatica">
+    <img src="foto2.jpg">
+  </div>
+  
 </div>
 
 <div id="p3" class="pagina">
-<h1>2026 — A volta</h1>
-<p>
-E agora... 2026. Depois de tudo, depois de tanto tempo, depois de tantas voltas que a vida deu, a gente chegou aqui. E eu posso dizer com toda certeza que eu nunca vivi algo assim antes. Porque estar com você de novo não é só bom... é diferente. 
-
-É como se tudo finalmente fizesse sentido. Antes de você, minha vida até seguia, mas era como uma noite sem luz, meio vazia, meio sem direção. E quando você voltou, foi como se tudo tivesse sido iluminado de novo. 
-
-E eu percebi uma coisa que talvez eu sempre soube, mas nunca consegui dizer de verdade: não importa o tempo que passe, não importa o que aconteça, você sempre foi, e sempre vai ser, a minha escolha. Eu te amo, minha neném.
-</p>
+  <h1>2026 — A volta</h1>
+  <p>Mesmo depois de mais de 8 anos… eu nunca cheguei exatamente aqui. Eu preciso começar dizendo o quanto eu tô feliz. Feliz de sentir isso vindo de você também… esse carinho, esse afeto… poder ficar grudado, te abraçar, te ter perto… não existe nada igual no mundo pra mim. De verdade… eu tô vivendo um sonho. E todo dia eu acordo pensando: “será que foi só um sonho?” E quando eu percebo que não foi… vem uma felicidade absurda, tudo de uma vez. Porque, antes de você… minha vida até seguia… mas era como uma noite sem lua… meio escura. E aí você apareceu… e iluminou tudo. E é estranho… porque eu nunca tive escolha nisso. Eu só… me apaixonei por você. E mesmo que pareça impossível às vezes… mesmo com tudo que já passou… eu escolheria você. Sempre você. E eu percebi uma coisa que talvez eu sempre soube, mas nunca consegui dizer de verdade: não importa o tempo que passe, não importa o que aconteça, você sempre foi, e sempre vai ser, a minha escolha. Porque você… é minha vida agora. Eu te amo, minha neném.
+  
 </div>
 
 <div id="p4" class="pagina">
-    <h1>E então agora que o leão se apaixonou pelo cordeiro... você aceita continuar escrevendo esse capítulo comigo? </h1>
-    <p style="font-style: italic; font-size: 24px;">"Você aceita passar 'a thousand years' do meu lado?"</p>
-    <div style="display: flex; gap: 20px; justify-content: center;">
-        <button id="sim">SIM 💖</button>
-        <button id="nao">não 😳</button>
-    </div>
+  <h1>E agora, Amanda...</h1>
+  <p style="font-style: italic; font-size: 1.5em; text-shadow: var(--text-glow);">"Você aceita passar 'A Thousand Years' (e mais mil depois dessas) do meu lado?"</p>
+  <div style="display: flex; gap: 20px; justify-content: center; margin-top: 40px;">
+    <button id="sim">SIM 💖</button>
+    <button id="nao">não 😳</button>
+  </div>
 </div>
 
 <div id="finalBox">
     <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
         <p id="finalText" style="text-align: left;"></p>
-        <img src="foto3.jpg" style="margin-bottom: 50px; width: 500px; max-width: 90%; height: auto; border-radius: 12px;">
+        
+        <div class="foto-dramatica" style="margin-top: 50px; margin-bottom: 70px;">
+            <img src="foto3.jpg">
+        </div>
+        
         <button id="aceito">SIM, EU ACEITO 💖</button>
     </div>
 </div>
 
 <script>
-/* navegação */
-function ir(id){
- document.querySelectorAll(".pagina").forEach(p=>p.classList.remove("ativa"));
- document.getElementById(id).classList.add("ativa");
- // Garante que a nova página comece no topo
- window.scrollTo(0,0);
+/* NAVEGAÇÃO COM TRANSIÇÃO SUAVE */
+function ir(idAtual, idProxima){
+  let atual = document.getElementById(idAtual);
+  let proxima = document.getElementById(idProxima);
+
+  // Fade out lento da página atual
+  atual.style.opacity = "0";
+  
+  setTimeout(() => {
+    atual.classList.remove("ativa");
+    
+    // Configura a próxima página
+    proxima.classList.add("ativa");
+    window.scrollTo(0,0);
+    
+    // Força o navegador a renderizar antes de começar o fade in
+    setTimeout(() => {
+      proxima.style.opacity = "1";
+    }, 50);
+    
+  }, 1200); // Tempo do fade out (Mais lento)
 }
 
-/* início */
+/* INÍCIO */
 document.getElementById("start").onclick = function(){
-  // Tenta tocar a música. Se o navegador bloquear, não faz nada.
+  // Garante que a música toque após o clique
   document.getElementById("musica").play().catch(()=>{});
-  ir("p1");
+  ir("p0", "p1");
 };
 
-/* avanço clicando nas páginas de história */
-document.getElementById("p1").onclick=()=>ir("p2");
-document.getElementById("p2").onclick=()=>ir("p3");
-document.getElementById("p3").onclick=()=>ir("p4");
+/* AVANÇO CLICANDO NAS PÁGINAS DE HISTÓRIA */
+document.getElementById("p1").onclick=()=>ir("p1", "p2");
+document.getElementById("p2").onclick=()=>ir("p2", "p3");
+document.getElementById("p3").onclick=()=>ir("p3", "p4");
 
-/* SIM */
+/* SIM (Abre o Final Box) */
 document.getElementById("sim").onclick = function(){
- document.getElementById("finalBox").style.display="block";
- document.getElementById("finalText").innerText = `Amanda... se você chegou até aqui, então você já percorreu comigo cada pedaço dessa história, cada lembrança, cada momento que fez a gente ser quem é hoje. E mesmo assim, ainda parece que tudo isso é só o começo. Porque quando eu paro pra pensar em você, eu não penso só no passado, eu não penso só no que a gente viveu... eu penso em tudo que ainda pode existir.
+  let finalBox = document.getElementById("finalBox");
+  finalBox.style.display="block";
+  
+  // Rola para o topo do texto longo
+  finalBox.scrollTop = 0;
+  
+  // Fade in lento do finalBox
+  setTimeout(() => {
+    finalBox.style.opacity = "1";
+  }, 100);
+
+  document.getElementById("finalText").innerText = `Amanda... se você chegou até aqui, então você já percorreu comigo cada pedaço dessa história, cada lembrança, cada momento que fez a gente ser quem é hoje. E mesmo assim, ainda parece que tudo isso é só o começo. Porque quando eu paro pra pensar em você, eu não penso só no passado, eu não penso só no que a gente viveu... eu penso em tudo que ainda pode existir.
 
 Eu penso nos dias simples, naqueles que não têm nada de especial, mas que se tornam únicos só porque você está ali comigo. Eu penso nas risadas bobas, nas conversas longas, nos silêncios confortáveis onde não precisa dizer nada, porque só a sua presença já basta.
 
@@ -310,12 +418,9 @@ Porque no final de tudo...
 sempre foi você.
 
 então para confirmar novamente, aceita passar a vida comigo?`;
- 
- // Rola para o topo do texto longo
- document.getElementById("finalBox").scrollTop = 0;
 };
 
-/* FINAL - AGORA MANTENDO OS EFEITOS */
+/* FINAL (Botão Aceito) */
 document.getElementById("aceito").onclick = function(){
  let flash=document.getElementById("flash");
  flash.style.opacity="1";
@@ -323,35 +428,34 @@ document.getElementById("aceito").onclick = function(){
  setTimeout(()=>{
     flash.style.opacity="0";
     
-    // Em vez de limpar o body, limpamos e reescrevemos o finalBox
+    // Reescreve o conteúdo do finalBox para a tela final
     let finalBox = document.getElementById("finalBox");
-    finalBox.innerHTML = ""; // Limpa o conteúdo antigo (texto longo e botão)
+    finalBox.innerHTML = ""; // Limpa o conteúdo antigo
     
-    // Centraliza o novo conteúdo verticalmente
+    // Cria a tela final ("Pra sempre")
     finalBox.style.display = "flex";
+    finalBox.style.justifyContent = "center";
+    finalBox.style.alignItems = "center";
+    finalBox.style.flexDirection = "column";
+    finalBox.style.height = "100vh";
     
-    // Cria os elementos da tela final
     let tituloFinal = document.createElement("h1");
-    tituloFinal.innerText = "Nós 💖";
+    tituloFinal.innerText = "♥ Nós";
+    tituloFinal.className = "forever-screen"; // Aplica o estilo grande
     
     let paragrafoFinal = document.createElement("p");
-    paragrafoFinal.innerText = "Para sempre.";
-    paragrafoFinal.style.fontSize = "30px"; // Texto maior para destaque
+    paragrafoFinal.innerText = "Para sempre. ♥";
+    paragrafoFinal.style.fontSize = "38px"; 
+    paragrafoFinal.style.letterSpacing = "4px";
+    paragrafoFinal.style.textShadow = "0 0 20px rgba(255,255,255,0.6)";
     
-    // Adiciona a foto novamente como um toque final
-    let fotoFinal = document.createElement("img");
-    fotoFinal.src = "foto3.jpg";
-    fotoFinal.style.marginTop = "30px";
-    
-    // Coloca os elementos na tela
     finalBox.appendChild(tituloFinal);
     finalBox.appendChild(paragrafoFinal);
-    finalBox.appendChild(fotoFinal);
     
- },400);
+ }, 600);
 };
 
-/* NÃO foge */
+/* NÃO FUGITIVO */
 document.getElementById("nao").onmouseover=function(){
  this.style.position="absolute";
  this.style.left=Math.random()*80+"%";
